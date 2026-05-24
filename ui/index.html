@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Scanner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Resume Scanner</h1>
+            <p>Upload resumes and find the best matches for your job description</p>
+        </header>
+
+        <main>
+            <section class="upload-section">
+                <h2>Upload Resumes</h2>
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content">
+                        <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14,2 14,8 20,8"></polyline>
+                        </svg>
+                        <p>Drop PDF, DOCX, or TXT files here, or click to browse</p>
+                        <input type="file" id="fileInput" multiple accept=".pdf,.docx,.txt">
+                    </div>
+                </div>
+                <div id="fileList" class="file-list"></div>
+            </section>
+
+            <section class="job-description-section">
+                <h2>Job Description</h2>
+                <textarea id="jobDescription" placeholder="Enter your job description here..."></textarea>
+            </section>
+
+            <section class="controls">
+                <button id="scanButton" class="scan-button">Scan Resumes</button>
+                <div id="loading" class="loading" style="display: none;">
+                    <div class="spinner"></div>
+                    <span>Analyzing resumes...</span>
+                </div>
+            </section>
+
+            <section class="results-section">
+                <h2>Results</h2>
+                <div id="results" class="results"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
